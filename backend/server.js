@@ -9,7 +9,7 @@ const socketIo = require('socket.io');
 require('dotenv').config();
 
 const logger = require('./src/utils/logger');
-const connectDB = require('./src/config/database');
+const connectDB = require('./src/config/database-sqlite');
 const initializeSocket = require('./src/websocket/index');
 
 // Import routes
