@@ -4,6 +4,7 @@ const cardService = require('../services/cardService');
 const { protect, checkOwnership } = require('../middleware/auth');
 const { catchAsync } = require('../middleware/errorHandler');
 const { logUserAction } = require('../utils/logger');
+const { getRow } = require('../config/database');
 
 const router = express.Router();
 
