@@ -23,6 +23,7 @@ const scheduleRoutes = require('./src/routes/schedules');
 const rideRoutes = require('./src/routes/rides');
 const notificationRoutes = require('./src/routes/notifications');
 const adminRoutes = require('./src/routes/admin');
+const healthRoutes = require('./src/config/routes');
 
 // Import middleware
 const errorHandler = require('./src/middleware/errorHandler');
