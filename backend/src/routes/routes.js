@@ -3,6 +3,7 @@ const Joi = require('joi');
 const routeFinderService = require('../services/routeFinderService');
 const { protect, optionalAuth } = require('../middleware/auth');
 const { catchAsync } = require('../middleware/errorHandler');
+const { getRow, query } = require('../config/database');
 
 const router = express.Router();
 
