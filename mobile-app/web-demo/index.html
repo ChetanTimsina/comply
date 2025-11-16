@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhutan Bus System - Mobile App Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: #FF6B35;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .app-content {
+            padding: 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 48px;
+        }
+
+        .feature-list {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            color: #FF6B35;
+            margin-bottom: 5px;
+        }
+
+        .feature-desc {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .status-indicator {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .button {
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #e55a2b;
+        }
+
+        .button.secondary {
+            background: #6c757d;
+        }
+
+        .button.secondary:hover {
+            background: #5a6268;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .api-test {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            🚌 Bhutan Bus System
+        </div>
+
+        <div class="app-content">
+            <div class="logo">
+                🏔️
+            </div>
+
+            <div class="status-indicator">
+                ✅ Backend API Connected
+            </div>
+
+            <h2>Welcome to Bhutan Bus System</h2>
+            <p>Your complete digital transit solution for the Kingdom of Bhutan</p>
+
+            <div class="feature-list">
+                <h3>🚀 Available Features</h3>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎫</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Digital Bus Card</div>
+                        <div class="feature-desc">QR code-based smart card system</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Live Tracking</div>
+                        <div class="feature-desc">Real-time bus locations</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🗺️</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Route Finder</div>
+                        <div class="feature-desc">Smart route planning</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Fare Calculator</div>
+                        <div class="feature-desc">Accurate pricing</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🆘</div>
+                    <div class="feature-text">
+                        <div class="feature-title">SOS Button</div>
+                        <div class="feature-desc">Emergency assistance</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💳</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Digital Payments</div>
+                        <div class="feature-desc">Bhutanese bank integration</div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍💼</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Admin Panel</div>
+                        <div class="feature-desc">Fleet management</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Test CID Number</label>
+                <input type="text" id="cidInput" placeholder="Enter Bhutanese CID" value="12345678901">
+            </div>
+
+            <div class="input-group">
+                <label>Test Phone Number</label>
+                <input type="text" id="phoneInput" placeholder="+97517..." value="+97517123456">
+            </div>
+
+            <button class="button" onclick="testAPI()">🧪 Test API Connection</button>
+            <button class="button secondary" onclick="simulateLogin()">👤 Simulate Login</button>
+
+            <div id="apiResponse" class="api-test" style="display: none;">
+                API Response will appear here...
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Bhutan Bus System</p>
+            <p>🏔️ Serving the people of the Kingdom of Bhutan</p>
+            <p>Backend: http://localhost:5000/health</p>
+        </div>
+    </div>
+
+    <script>
+        // Test API connection
+        async function testAPI() {
+            const responseDiv = document.getElementById('apiResponse');
+            responseDiv.style.display = 'block';
+            responseDiv.innerHTML = 'Testing API connection...';
+
+            try {
+                // Test health endpoint
+                const healthResponse = await fetch('http://localhost:5000/health');
+                const healthData = await healthResponse.json();
+
+                // Test API endpoint
+                const apiResponse = await fetch('http://localhost:5000/api/test');
+                const apiData = await apiResponse.json();
+
+                responseDiv.innerHTML = `
+                    <strong>✅ API Health Check:</strong><br>
+                    ${JSON.stringify(healthData, null, 2)}<br><br>
+                    <strong>✅ API Features:</strong><br>
+                    ${JSON.stringify(apiData, null, 2)}
+                `;
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <strong>❌ API Error:</strong><br>
+                    ${error.message}<br><br>
+                    Make sure the backend server is running on localhost:5000
+                `;
+            }
+        }
+
+        // Simulate login
+        function simulateLogin() {
+            const cid = document.getElementById('cidInput').value;
+            const phone = document.getElementById('phoneInput').value;
+            const responseDiv = document.getElementById('apiResponse');
+
+            responseDiv.style.display = 'block';
+            responseDiv.innerHTML = `
+                <strong>👤 Login Simulation:</strong><br>
+                CID: ${cid}<br>
+                Phone: ${phone}<br><br>
+                <strong>🎫 Digital Card Generated:</strong><br>
+                Card Number: BT-2024-${Math.random().toString(36).substr(2, 9).toUpperCase()}<br>
+                Balance: Nu. 150.00<br>
+                Status: Active<br><br>
+                <strong>🚌 Recent Routes:</strong><br>
+                • Memorial Chorten → Clock Tower<br>
+                • Chubachu → Motithang<br>
+                • Thimphu → Paro
+            `;
+        }
+
+        // Auto-test API on page load
+        window.onload = function() {
+            setTimeout(testAPI, 1000);
+        };
+    </script>
+</body>
+</html>
