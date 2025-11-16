@@ -81,15 +81,8 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
 app.use(requestLogger);
 
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.status(200).json({
-    status: 'OK',
-    timestamp: new Date().toISOString(),
-    service: 'Bhutan Bus System API',
-    version: '1.0.0'
-  });
-});
+// Health check route
+app.use('/', healthRoutes);
 
 // API routes
 app.use('/api/auth', authRoutes);
