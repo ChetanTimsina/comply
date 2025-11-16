@@ -39,7 +39,7 @@
     "moment": "^2.29.4",
     "axios": "^1.6.2",
     "qrcode": "^1.5.3",
-    "node-ngeohash": "^0.1.2",
+    "ngeohash": "^0.3.0",
     "node-cron": "^3.0.3",
     "nodemailer": "^6.9.8",
     "multer": "^1.4.5-lts.1",
